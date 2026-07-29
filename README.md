@@ -101,8 +101,8 @@ Engineered with zero-copy Android hardware encoding (`MediaCodec` Surface) and P
 4. The launcher will output your PC's local Wi-Fi IP address (e.g. `192.168.1.105`) and automatically launch the Web Dashboard at `http://localhost:8000`.
 
 ---
-Click here to Download android app.
-[Wireless-Webcam](apk/debug/app-debug.apk)
+#Click here to Download android app.
+[Wireless-Webcam](app-debug.apk)
 
 ### Step 2: Connect the Android Phone
 
