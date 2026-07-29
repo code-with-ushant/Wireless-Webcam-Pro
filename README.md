@@ -76,3 +76,119 @@ Engineered with zero-copy Android hardware encoding (`MediaCodec` Surface) and P
 +----------------------------------------+
 |               OBS Studio               |
 +----------------------------------------+
+```
+
+---
+
+## 🚀 Quick Start Guide
+
+### Step 1: Start the Desktop Receiver (Windows)
+
+1. Open PowerShell / Terminal in the `desktop/` directory.
+2. Install Python dependencies (Python 3.13+ recommended):
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *or using [uv](https://github.com/astral-sh/uv):*
+   ```bash
+   uv venv
+   uv pip install -r requirements.txt
+   ```
+3. Run the desktop receiver launcher:
+   ```bash
+   python run_desktop.py
+   ```
+4. The launcher will output your PC's local Wi-Fi IP address (e.g. `192.168.1.105`) and automatically launch the Web Dashboard at `http://localhost:8000`.
+
+---
+
+### Step 2: Connect the Android Phone
+
+1. Install and open the **Wireless Webcam** app on your Android phone.
+2. Tap the **Wi-Fi Icon** at the top-right of the camera view.
+3. Enter your Windows PC's IP address (e.g., `192.168.1.105`).
+4. Tap **Save**, then tap the circular **Start Stream** button on the right edge.
+5. Your live camera stream will immediately transmit to your PC.
+
+---
+
+### Step 3: Add to OBS Studio
+
+#### Option A: Direct Video Capture Device (Virtual Camera)
+1. Open **OBS Studio**.
+2. Under **Sources**, click `+` and select **Video Capture Device**.
+3. Select **OBS Virtual Camera** (or **Unity Capture**) from the Device dropdown.
+4. Set Resolution/FPS Type to **Custom**:
+   - Resolution: `1920x1080` (or `1280x720`)
+   - FPS: `Match Output FPS` or `60` / `30`
+5. Click **OK**.
+
+#### Option B: Browser Source (Direct Local Stream)
+1. Open **OBS Studio**.
+2. Under **Sources**, click `+` and select **Browser**.
+3. Set URL to: `http://localhost:8000/api/mjpeg`
+4. Set Width to `1920` and Height to `1080`.
+5. Click **OK**.
+
+---
+
+## 📁 Repository Structure
+
+```text
+.
+├── android/                        # Android Kotlin Application
+│   ├── app/src/main/java/com/wirelesswebcam/
+│   │   ├── camera/                 # CameraX Pipeline Manager
+│   │   ├── encoder/                # MediaCodec H.264 Hardware Encoder
+│   │   ├── network/                # Low-Latency WebSocket Streamer
+│   │   ├── protocol/               # Binary Wire Framing Protocol
+│   │   └── ui/                     # Jetpack Compose & Material 3 HUD Layout
+│   └── build.gradle.kts
+│
+├── desktop/                        # Windows Python Receiver Engine
+│   ├── src/
+│   │   ├── decoder/                # PyAV Zero-Latency H.264 Decoder
+│   │   ├── network/                # FastAPI WebSockets & Control Models
+│   │   ├── pipeline/               # Non-Blocking Drop-Oldest Ring Buffer
+│   │   ├── service/                # Stream Orchestration & Telemetry Engine
+│   │   ├── vcam/                   # pyvirtualcam DirectShow Driver Output
+│   │   └── static/                 # Web Dashboard Frontend (HTML5/JS)
+│   ├── tests/                      # Automated Verification Test Suites
+│   ├── run_desktop.py              # One-Click Desktop Launcher Script
+│   └── requirements.txt
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Performance Tuning & Troubleshooting
+
+- **Wi-Fi Band**: Always connect both your PC and Phone to the **5 GHz Wi-Fi band** (or Wi-Fi 6) on your local router.
+- **Bitrate Setting**: Default bitrate is set to **5.0 Mbps**. For crowded Wi-Fi networks, use the Web Dashboard slider to set bitrate between **4.0 – 6.0 Mbps** for lag-free streaming.
+- **Video Stuck / Frozen**: Tap the **Force Keyframe** button on the Web Dashboard to request an immediate IDR keyframe refresh from the hardware encoder.
+
+---
+
+## 🛠️ Building from Source
+
+### Android App
+Requirements: Android Studio / Gradle 8.9+, JDK 17+, Android SDK Platform 35.
+```bash
+cd android
+./gradlew assembleDebug
+```
+The compiled APK will be generated at:
+`android/app/build/outputs/apk/debug/app-debug.apk`
+
+---
+
+## 📜 Acknowledgments
+
+Developed with assistance from Google Antigravity AI pair programmer for architecture prototyping and low-latency pipeline optimization.
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
