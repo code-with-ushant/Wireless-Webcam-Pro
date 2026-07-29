@@ -104,7 +104,7 @@ Engineered with zero-copy Android hardware encoding (`MediaCodec` Surface) and P
 
 ## Download APK
 
-[📱 Download Debug APK](https://github.com/code-with-ushant/Wireless-Webcam-Pro/blob/main/apk/debug/app-debug.apk)
+[📱 Download Debug APK](https://github.com/code-with-ushant/Wireless-Webcam-Pro/raw/main/apk/debug/app-debug.apk)
 
 ### Step 2: Connect the Android Phone
 
