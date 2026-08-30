@@ -103,11 +103,11 @@ Engineered with zero-copy Android hardware encoding (`MediaCodec` Surface) and P
 ---
 
 ## Download APK
-
-[📱 Download Debug APK](https://github.com/code-with-ushant/Wireless-Webcam-Pro/raw/main/apk/debug/app-debug.apk)
-# Version 2.0
+# Wireless-Webcam 
+[📱Click to Download](https://github.com/code-with-ushant/Wireless-Webcam-Pro/raw/main/apk/debug/app-debug.apk)
+# Wireless-Webcam Version 2.0
 - New feature: Screensharing available.
-- Got some optimization and feel smooth.
+- Got some optimization and feel smooth.\n
 [📱 Download Debug APK New version](https://github.com/code-with-ushant/Wireless-Webcam-Pro/raw/main/apk/debug/WirelessWebcam.apk)
 
 ### Step 2: Connect the Android Phone
