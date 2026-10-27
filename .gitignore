@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+env/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# PyInstaller / Distribution
+desktop/build/
+desktop/dist/
+release/
+*.zip
+*.tar.gz
+test_build.spec
+
+# Android / Gradle
+.gradle/
+build/
+app/build/
+android/app/build/
+*.apk
+*.aar
+local.properties
+.idea/
+*.iml
+.ds_store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
