@@ -85,7 +85,7 @@ Engineered with zero-copy Android hardware encoding (`MediaCodec` Surface) and P
 ### Option 1: Standalone Release Pack (Zero Python / Zero Setup) — Recommended
 
 If you just want to use the app without touching code or installing Python:
-1. Download **`WirelessWebcam-v1.0-Windows.zip`** from [Releases](https://github.com/code-with-ushant/Wireless-Webcam-Pro/releases/latest).
+1. Download **[WirelessWebcam-v1.0-Windows.zip](https://github.com/code-with-ushant/Wireless-Webcam-Pro/releases/download/v1.0.0/WirelessWebcam-v1.0-Windows.zip)** (or view the [v1.0.0 Release](https://github.com/code-with-ushant/Wireless-Webcam-Pro/releases/tag/v1.0.0)).
 2. Extract the ZIP anywhere on your PC.
 3. Double-click **`WirelessWebcam.exe`**.
    - If Windows Firewall asks for permission, click **Allow**. (Or run `Allow-Firewall.bat` as Administrator).
@@ -192,7 +192,8 @@ Choose whichever is easiest for you:
 
 #### 📦 Download Pre-Built Setup Pack
 Download the latest 1-click standalone package:
-👉 **[WirelessWebcam-v1.0-Windows.zip](https://github.com/code-with-ushant/Wireless-Webcam-Pro/releases/latest)** *(Zero Python or drivers required)*
+👉 **[Download WirelessWebcam-v1.0-Windows.zip](https://github.com/code-with-ushant/Wireless-Webcam-Pro/releases/download/v1.0.0/WirelessWebcam-v1.0-Windows.zip)** *(Direct 1-Click Download — Zero Python or drivers required)*  
+*(Full Release details on [GitHub Releases](https://github.com/code-with-ushant/Wireless-Webcam-Pro/releases/tag/v1.0.0))*
 
 #### 🔨 Building from Source
 Requirements: Python 3.12+ (or [uv](https://astral.sh/uv)).
